@@ -10,7 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains,ScrollOrigin
 from time import sleep
 import re
 import sqlite3
-import pandas as pd
+
 
 
 gch = sqlite3.connect('sqlite_gocheck.db')

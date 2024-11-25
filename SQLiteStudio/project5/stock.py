@@ -51,20 +51,7 @@ def insert_data(_date, open_price, highest_price, lowest_price, closing_price,ch
 # 1. Thu thập dữ liệu
 # Khởi tạo Webdriver
 
-# Đường dẫn đến file thực thi geckodriver
-gecko_path = r"D:/22DKHA1/OSDS/TH_MNM_DS/B3_TH_MNM/geckodriver.exe"
-
-# Khởi tởi đối tượng dịch vụ với đường geckodriver
-ser = Service(gecko_path)
-
-# Tạo tùy chọn
-options = webdriver.firefox.options.Options();
-options.binary_location ="C:/Program Files/Mozilla Firefox/firefox.exe"
-# Thiết lập firefox chỉ hiện thị giao diện
-options.headless = False
-
-# Khởi tạo driver
-driver = webdriver.Firefox(options=options, service=ser)
+driver = webdriver.Chrome()
 # Truy cập trang web cần lấy dữ liệu
 driver.get("https://simplize.vn/co-phieu/SAB/lich-su-gia")
 time.sleep(5)
@@ -91,7 +78,7 @@ for row in rows:
     insert_data(_date, open_price, highest_price, lowest_price, closing_price,changed_price, price_change_percentage, changed_volume)
 
 
-driver.quit()
+
 
 
 # Câu 1
